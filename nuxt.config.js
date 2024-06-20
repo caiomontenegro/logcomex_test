@@ -12,7 +12,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/logcomex.ico' }
     ]
   },
 
@@ -24,12 +24,15 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    src: '@/assets/styles/style.scss'
+    '@/assets/styles/style.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    src: '@/plugins/bootstrap-vue'
+    {
+      src: '@/plugins/bootstrap-vue',
+      mode: 'client'
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
