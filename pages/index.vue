@@ -35,6 +35,22 @@
         </div>
       </div>
     </page-section>
+    <page-section>
+      <div class="technologies">
+        <div class="technologies__content">
+          <div class="technologies__intro">
+            <div class="technologies__title">
+              <client-only>
+                <b-icon-laptop class="icon"></b-icon-laptop>
+              </client-only>
+              <h2>Technologias e ferramentas utilizadas</h2>
+            </div>
+          </div>
+          <div class="technologies__list">
+          </div>
+        </div>
+      </div>
+    </page-section>
   </div>
 </template>
 
