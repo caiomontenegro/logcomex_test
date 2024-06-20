@@ -139,6 +139,7 @@ export default {
 
   &__title {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 5px;
     margin-bottom: 20px;
