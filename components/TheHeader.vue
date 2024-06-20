@@ -29,22 +29,14 @@
 export default {
   data() {
     return {
-      // Insert the company name
-      companyName: 'Company Name',
-      // Add a main company url page
-      linkAddress: '#',
+      companyName: 'Logcomex',
+      linkAddress: 'https://www.logcomex.com/',
       showMenu: false,
-      // Add your simples navigation links
       navLinks: [
         {
           id: 0,
-          linkText: 'feature 01',
-          linkAddress: '#'
-        },
-        {
-          id: 1,
-          linkText: 'feature 02',
-          linkAddress: '#'
+          linkText: 'Funcionários',
+          linkAddress: '/employees'
         }
       ]
     }
@@ -67,6 +59,7 @@ header {
 
 .navigation {
   display: flex;
+  padding: 20px 0px;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -155,7 +148,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px 0px 30px ;
+    padding: 10px 30px 10px 30px ;
     width: 80%;
     border-bottom: 2px solid $accent-color;
 
