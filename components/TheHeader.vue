@@ -4,7 +4,7 @@
       <div class="navigation__head">
         <div class="navigation__logo">
           <NuxtLink to="/" target="_self">
-            <img src="~/assets/img/logcomex_novo_logotipo.svg" alt="logoimg" width="100px">
+            <img src="~/assets/img/logcomex_novo_logotipo.svg" alt="logoimg" width="150px">
           </NuxtLink>
         </div>
         <buttons-burguer-button @click="menuToggle" :activeButton="showMenu"></buttons-burguer-button>
