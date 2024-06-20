@@ -18,7 +18,7 @@ export default {
 
   styleResources: {
     scss: [
-      '~/assets/styles/_variables.scss'
+      '@/assets/styles/_variables.scss'
     ]
   },
 
@@ -44,6 +44,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/style-resources'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
