@@ -21,7 +21,7 @@
               </client-only>
               <h2>Funcionalidades</h2>
             </div>
-            <p class="features__description">Essa aplicação, é um teste para a posição de Front-end. Confira todas as funcionalidades que compõem o teste</p>
+            <p class="features__description">Essa aplicação, é um teste para a posição de Front-end Vue.js. Confira todas as funcionalidades que compõem o teste</p>
           </div>
           <div class="features__list">
             <containers-feature-card
@@ -45,22 +45,16 @@ export default {
       features: [
         {
           id: 0,
-          icon: 'star',
-          title: 'Feature',
-          description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, veritatis autem atque aut'
+          icon: 'card-list',
+          title: 'Lista de Funcionários',
+          description: 'Verique a lista de todos os funcionários registrados em sua empresa'
         },
         {
           id: 1,
-          icon: 'star',
-          title: 'Feature',
-          description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, veritatis autem atque aut'
+          icon: 'clipboard-data',
+          title: 'Dados do Funcionário',
+          description: 'Acesse os principais dados de seus funcionários com um clique'
         },
-        {
-          id: 2,
-          icon: 'star',
-          title: 'Feature',
-          description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, veritatis autem atque aut'
-        }
       ],
     }
   }
@@ -112,6 +106,52 @@ export default {
   }
 }
 
+.features {
+  background-color: $primary-color;
+  color: $text_secundaryColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 80%;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 30px;
+      margin: 0px;
+    }
+  }
+
+  &__description {
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 25px;
+  }
+}
+
+.icon {
+  color: $accent-color;
+  font-size: 35px;
+}
+
 @media(min-width: 1000px) {
 
   .hero {
@@ -131,6 +171,34 @@ export default {
 
     &__description {
       margin-bottom: 30px;
+    }
+  }
+
+  .features {
+    &__content {
+      display: flex;
+    }
+
+    &__intro {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+    }
+
+    &__title {
+      font-size: 34px;
+    }
+
+    &__description {
+      font-size: 24px;
+      max-width: 400px;
+      text-align: start;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
     }
   }
 
