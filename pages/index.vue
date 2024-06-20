@@ -24,6 +24,13 @@
             <p class="features__description">Essa aplicação, é um teste para a posição de Front-end. Confira todas as funcionalidades que compõem o teste</p>
           </div>
           <div class="features__list">
+            <containers-feature-card
+              v-for="feature in features" :key="feature.id"
+              :icon="feature.icon"
+              :title="feature.title"
+              :description="feature.description"
+            >
+            </containers-feature-card>
           </div>
         </div>
       </div>
@@ -35,6 +42,26 @@
 export default {
   data() {
     return {
+      features: [
+        {
+          id: 0,
+          icon: 'star',
+          title: 'Feature',
+          description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, veritatis autem atque aut'
+        },
+        {
+          id: 1,
+          icon: 'star',
+          title: 'Feature',
+          description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, veritatis autem atque aut'
+        },
+        {
+          id: 2,
+          icon: 'star',
+          title: 'Feature',
+          description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, veritatis autem atque aut'
+        }
+      ],
     }
   }
 }
