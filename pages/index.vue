@@ -164,6 +164,40 @@ export default {
   }
 }
 
+.technologies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 80%;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      padding-top: 10px;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
 .icon {
   color: $accent-color;
   font-size: 35px;
