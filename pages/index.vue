@@ -6,13 +6,39 @@
           <div class="presentation">
             <h1 class="presentation__title">Teste Front-End</h1>
             <p class="presentation__description">Seja Bem vindo ao teste de <span class="presentation__description-strong">front-end</span> para<span class="presentation__description-company"> Logcomex</span>. Sinta-se à vontade!</p>
-            <links-special-link text-content="Documentation" linkAdress="#"></links-special-link>
+            <links-special-link text-content="Documentação" linkAdress="https://github.com/caiomontenegro/logcomex_test"></links-special-link>
+          </div>
+        </div>
+      </div>
+    </page-section>
+    <page-section>
+      <div class="features">
+        <div class="features__content">
+          <div class="features__intro">
+            <div class="features__title">
+              <client-only>
+                <b-icon-lightning-charge class="icon"></b-icon-lightning-charge>
+              </client-only>
+              <h2>Funcionalidades</h2>
+            </div>
+            <p class="features__description">Essa aplicação, é um teste para a posição de Front-end. Confira todas as funcionalidades que compõem o teste</p>
+          </div>
+          <div class="features__list">
           </div>
         </div>
       </div>
     </page-section>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .hero {
