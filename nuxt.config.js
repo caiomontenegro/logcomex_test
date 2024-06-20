@@ -12,7 +12,8 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/logcomex.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/logcomex.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'}
     ]
   },
 

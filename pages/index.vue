@@ -47,6 +47,12 @@
             </div>
           </div>
           <div class="technologies__list">
+            <containers-technology-item
+              v-for="technology in technologies" :key="technology.id"
+              :icon="technology.icon"
+              :title="technology.title"
+              :description="technology.description"
+            ></containers-technology-item>
           </div>
         </div>
       </div>
@@ -72,6 +78,32 @@ export default {
           description: 'Acesse os principais dados de seus funcionários com um clique'
         },
       ],
+      technologies: [
+        {
+          id: 0,
+          icon: "devicon-vuejs-plain",
+          title:"Vue.js",
+          description:"Js Framework"
+        },
+        {
+          id: 1,
+          icon: "devicon-bootstrap-plain",
+          title:"Booststrap",
+          description:"CSS Framework"
+        },
+        {
+          id: 2,
+          icon: "devicon-sass-original",
+          title:"Sass/Scss",
+          description:"Preprocessor"
+        },
+        {
+          id: 3,
+          icon: "devicon-nuxtjs-plain",
+          title:"Nuxt.js",
+          description:"Vue Framework"
+        },
+      ]
     }
   }
 }
