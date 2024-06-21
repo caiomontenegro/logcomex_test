@@ -2,15 +2,16 @@
   <div>
     <page-section class="employeesSection">
       <div class="employeesSection__content">
-        <h1>Lista de Funcionários</h1>
-        <div class="employeeTable">
-          <div class="employeeTable__row" v-for="employee in employees" :key="employee.id">
-            <div class="employeeTable__cel">{{ employee.id }}</div>
-            <div class="employeeTable__cel">{{ employee.name }}</div>
-            <div class="employeeTable__cel">
-              <NuxtLink class="employeeLink" to="#" target="_self">detalhes</NuxtLink>
-            </div>
-          </div>
+        <div class="employeesSection__intro">
+          <h1>Lista de Funcionários</h1>
+          <p>Confira abaixo sua lista de funcionários cadastrados.</p>
+        </div>
+        <div class="employessSection__table">
+          <form action="" class="searchForm">
+            <label for="inputSearch">Pesquisar</label>
+            <input type="search" id="inputSearch" placeholder="Digite para Pesquisar" v-model="filter">
+          </form>
+          <b-table :items="filteredItems"></b-table>
         </div>
       </div>
     </page-section>
@@ -21,7 +22,7 @@
 export default {
   data() {
     return {
-      filter: null,
+      filter: '',
       employees: [
         {
           id: 0,
@@ -53,7 +54,7 @@ export default {
         },
         {
           id: 4,
-          name: 'Marta',
+          name: 'Naura',
           photo: '',
           office: 'Líder Tecnico',
           description: 'Liderança do time'
@@ -61,7 +62,21 @@ export default {
       ]
     }
   },
-  methods: {
+  computed: {
+    employeesTableData() {
+      return this.employees.map(employee => ({
+        ID: employee.id,
+        Nome: employee.name,
+        Cargo: employee.office
+      }))
+    },
+    filteredItems() {
+      return this.employeesTableData.filter(employee => {
+        return Object.values(employee).some(val =>
+          String(val).toLowerCase().includes(this.filter.toLowerCase())
+        )
+      })
+    }
   }
 }
 </script>
@@ -72,45 +87,24 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 500px;
+  min-height: 800px;
+  height: 100vh;
 
   &__content {
     width: 80%;
   }
-}
 
-.employeeTable {
-  display: flex;
-  flex-direction: column;
-  border-radius: 3px;
-
-  &__row {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-  }
-
-  &__cel {
-    display: flex;
-    padding: 4px;
-    border: 1px solid;
-    
-    
-    &:nth-child(1) {
-      justify-content: center;
-      width: 48px;
-    }
-
-    &:nth-child(2) {
-      padding-left: 10px;
-      flex-grow: 1;
-    }
-  }
-
-  .employeeLink {
-    color: $text-color;
-    text-decoration:none;
+  &__table {
+    padding: 80px;
+    background-color: $accent-color;
   }
 }
+
+.searchForm {
+  background: $accent-color;
+  padding: 4px 12px;
+}
+
+
 
 </style>
