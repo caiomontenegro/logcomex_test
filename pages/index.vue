@@ -41,9 +41,9 @@
           <div class="technologies__intro">
             <div class="technologies__title">
               <client-only>
-                <b-icon-laptop class="icon"></b-icon-laptop>
+                <b-icon-laptop class="technologies__icon"></b-icon-laptop>
               </client-only>
-              <h2>Technologias e ferramentas utilizadas</h2>
+              <h2>Technologias, ferramentas e conceitos utilizados</h2>
             </div>
           </div>
           <div class="technologies__list">
@@ -103,6 +103,18 @@ export default {
           title:"Nuxt.js",
           description:"Vue Framework"
         },
+        {
+          id: 4,
+          icon: "devicon-docker-plain",
+          title: "Docker",
+          description: "Virtual Containers"
+        },
+        {
+          id: 5,
+          icon: "devicon-playwright-plain",
+          title: "Mobile First",
+          description: "Responsiveness"
+        }
       ]
     }
   }
@@ -202,6 +214,11 @@ export default {
   justify-content: center;
   padding: 36px 0px;
 
+  &__icon {
+    font-size: 80px;
+    color: $accent-color;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -209,7 +226,6 @@ export default {
     gap: 30px;
     width: 80%;
   }
-
   &__title {
     display: flex;
     flex-direction: column;
@@ -282,6 +298,16 @@ export default {
       display: flex;
       flex-direction: row;
       gap: 30px;
+    }
+  }
+
+  .technologies {
+
+    min-height: 500px;
+    
+    &__content {
+
+      gap: 100px;
     }
   }
 
