@@ -7,11 +7,12 @@
 <style lang="scss" scoped>
 
 .footer {
-  position: absolute;
-  bottom: 1;
+  position: fixed;
+  bottom: 0;
   width: 100%;
   color: $text-color;
-  background-color: $background-glass-color;
+  background-color: $accent-color;
+  border-top: 1px solid $background-color;
   display: flex;
   justify-content: center;
   gap: 5px;
