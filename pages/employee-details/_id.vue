@@ -9,7 +9,7 @@
           <div class="employeeSection__details">
             <div class="employee"  v-if="employee">
               <div class="employee__leftSide">
-                <img src="~/assets/img/user.png" alt="">
+                <img src="" alt="">
               </div>
               <div class="employee__rightSide">
                 <div class="employee__info">
