@@ -9,31 +9,31 @@
           <div class="employeeSection__details">
             <div class="employee"  v-if="employee">
               <div class="employee__leftSide">
-                <img src="" alt="">
+                <img src="~/assets/img/user.png" alt="">
               </div>
               <div class="employee__rightSide">
                 <div class="employee__info">
                   <label rel="">ID:</label>
                   <div id="employee__id" class="employee__data">
-                    {{ employee.id }}
+                    <span>{{ employee.id }}</span>
                   </div>
                 </div>
                 <div class="employee__info">
                   <label rel="employee__name">Nome:</label>
                   <div id="employee__name" class="employee__data">
-                    {{ employee.name }}
+                    <span>{{ employee.name }}</span>
                   </div>
                 </div>
                 <div class="employee__info">
                   <label rel="employee__office">Cargo:</label>
                   <div id="employee__office" class="employee__data">
-                    {{ employee.office }}
+                    <span>{{ employee.office }}</span>
                   </div>
                 </div>
                 <div class="employee__info">
                   <label rel="employee__description">Descrição:</label>
                   <div id="employee__description" class="employee__data">
-                    {{ employee.description }}
+                    <span>{{ employee.description }}</span>
                   </div>
                 </div>
               </div>
@@ -135,6 +135,13 @@ export default {
   border: 1px solid $accent-color;
   border-radius: 12px;
   padding: 12px;
+  min-width: 300px;
+  gap: 30px;
+
+  &__leftSide {
+    display: flex;
+    justify-content: space-evenly;
+  }
 
   &__rightSide {
     display: flex;
@@ -143,13 +150,16 @@ export default {
 
   &__info {
     display: flex;
-    gap: 8px;
   }
 
   &__data {
-    align-self: center;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.452);
   }
 }
 
-
+@media(min-width: 1000px) {
+}
 </style>
