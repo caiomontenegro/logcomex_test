@@ -12,9 +12,9 @@
       <div :class="['navigation__links', {'navigation__linksShowed': showMenu}]">
         <ul class="navigation__default">
           <li v-for="link in navLinks" :key="link.id" class="navigation__li">
-            <NuxtLink :to="link.linkAddress" class="navigation__simpleLink" target="_self">
+            <a :href="link.linkAddress" class="navigation__simpleLink" target="_self">
               {{ link.linkText }}
-            </NuxtLink>
+            </a>
           </li>
         </ul>
         <div class="navigation__special">
@@ -71,7 +71,7 @@ header {
   background: $background-glass-color;
   backdrop-filter: blur(2px);
   transition: 0.5s;
-  z-index: 1;
+  z-index: 2;
 
   &__actived {
     background: $background-header-color;
