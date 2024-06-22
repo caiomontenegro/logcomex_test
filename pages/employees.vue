@@ -121,7 +121,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(4, 0, 17, 0.514);
+    background: rgba(4, 0, 17, 0.788);
     z-index: 0;
   }
 
