@@ -7,18 +7,20 @@
             <h1>Lista de Funcionários</h1>
             <p>Confira abaixo sua lista de funcionários cadastrados.</p>
           </div>
-          <div class="employessSection__table">
-            <form action="" class="searchForm">
-              <label for="inputSearch" class="searchForm__label">Filtrar:</label>
-              <input type="search" id="inputSearch" placeholder="Digite seu filtro aqui" v-model="filter" class="searchForm__input">
-            </form>
-            <b-table hover :items="filteredItems" :fields="fields" table-class="table">
-              <template #cell(actions)="data">
-                <button @click="employeeRedirect(data.item.ID)" class="table__details">Detalhes</button>
-              </template>
-            </b-table>
-            <div class="tableFooter"></div>
-          </div>
+          <client-only>
+            <div class="employessSection__table">
+              <form action="" class="searchForm">
+                <label for="inputSearch" class="searchForm__label">Filtrar:</label>
+                <input type="search" id="inputSearch" placeholder="Digite seu filtro aqui" v-model="filter" class="searchForm__input">
+              </form>
+              <b-table hover :items="filteredItems" :fields="fields" table-class="table">
+                <template #cell(actions)="data">
+                  <button @click="employeeRedirect(data.item.ID)" class="table__details">Detalhes</button>
+                </template>
+              </b-table>
+              <div class="tableFooter"></div>
+            </div>
+          </client-only>
         </div>
       </div>
     </page-section>
@@ -93,7 +95,7 @@ export default {
   },
   methods: {
     employeeRedirect(employeeId) {
-      this.$router.push({ name: 'employee-details', params: { id: employeeId } })
+      this.$router.push({ name: 'employee-details-id', params: { id: employeeId } })
     }
   }
 }
