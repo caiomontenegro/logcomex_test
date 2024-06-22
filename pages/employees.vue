@@ -8,10 +8,15 @@
         </div>
         <div class="employessSection__table">
           <form action="" class="searchForm">
-            <label for="inputSearch">Pesquisar</label>
-            <input type="search" id="inputSearch" placeholder="Digite para Pesquisar" v-model="filter">
+            <label for="inputSearch" class="searchForm__label">Filtrar:</label>
+            <input type="search" id="inputSearch" placeholder="Digite seu filtro aqui" v-model="filter" class="searchForm__input">
           </form>
-          <b-table :items="filteredItems"></b-table>
+          <b-table hover :items="filteredItems" :fields="fields" table-class="table">
+            <template #cell(actions)="data">
+              <button @click="employeeRedirect(data.item.ID)" class="table__details">Detalhes</button>
+            </template>
+          </b-table>
+          <div class="tableFooter"></div>
         </div>
       </div>
     </page-section>
@@ -23,6 +28,12 @@ export default {
   data() {
     return {
       filter: '',
+      fields: [
+        {key: 'ID', label: 'ID'},
+        {key: 'Nome', label: 'Nome'},
+        {key: 'Cargo', label: 'Cargo'},
+        {key: 'actions', label: 'Detalhes'},
+      ],
       employees: [
         {
           id: 0,
@@ -77,11 +88,16 @@ export default {
         )
       })
     }
+  },
+  methods: {
+    employeeRedirect(employeeId) {
+      this.$router.push({ name: 'employee-details', params: { id: employeeId } })
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .employeesSection {
   display: flex;
@@ -92,19 +108,58 @@ export default {
 
   &__content {
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
   }
 
   &__table {
     padding: 80px;
     background-color: $accent-color;
-  }
+    border-radius: 15px;
+    }
 }
 
 .searchForm {
   background: $accent-color;
-  padding: 4px 12px;
+  border-radius: 15px 0px 0px 0px;
+  padding: 8px 12px;
+
+  &__input {
+    border: none;
+    border-radius: 3px;
+    padding-left: 6px;
+  }
 }
 
+.table {
+  font-size: 12px;
+  margin-bottom: 0px;
 
+  &__details {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    color: $accent-color;
+    font-weight: 600;
+  }
+
+  td {
+    vertical-align: middle;
+
+    &:nth-child(1) {
+      text-align: center;
+    }
+
+    &:nth-child(4) {
+      text-align: center;
+    }
+  }
+}
+
+.tableFooter {
+  height: 16px;
+  border-radius: 0px 0px 15px 0px;
+  background-color: $accent-color;
+}
 
 </style>
