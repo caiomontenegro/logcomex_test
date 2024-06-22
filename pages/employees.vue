@@ -1,22 +1,24 @@
 <template>
   <div>
-    <page-section class="employeesSection">
-      <div class="employeesSection__content">
-        <div class="employeesSection__intro">
-          <h1>Lista de Funcionários</h1>
-          <p>Confira abaixo sua lista de funcionários cadastrados.</p>
-        </div>
-        <div class="employessSection__table">
-          <form action="" class="searchForm">
-            <label for="inputSearch" class="searchForm__label">Filtrar:</label>
-            <input type="search" id="inputSearch" placeholder="Digite seu filtro aqui" v-model="filter" class="searchForm__input">
-          </form>
-          <b-table hover :items="filteredItems" :fields="fields" table-class="table">
-            <template #cell(actions)="data">
-              <button @click="employeeRedirect(data.item.ID)" class="table__details">Detalhes</button>
-            </template>
-          </b-table>
-          <div class="tableFooter"></div>
+    <page-section>
+      <div class="employeesSection">
+        <div class="employeesSection__content">
+          <div class="employeesSection__intro">
+            <h1>Lista de Funcionários</h1>
+            <p>Confira abaixo sua lista de funcionários cadastrados.</p>
+          </div>
+          <div class="employessSection__table">
+            <form action="" class="searchForm">
+              <label for="inputSearch" class="searchForm__label">Filtrar:</label>
+              <input type="search" id="inputSearch" placeholder="Digite seu filtro aqui" v-model="filter" class="searchForm__input">
+            </form>
+            <b-table hover :items="filteredItems" :fields="fields" table-class="table">
+              <template #cell(actions)="data">
+                <button @click="employeeRedirect(data.item.ID)" class="table__details">Detalhes</button>
+              </template>
+            </b-table>
+            <div class="tableFooter"></div>
+          </div>
         </div>
       </div>
     </page-section>
@@ -100,17 +102,34 @@ export default {
 <style lang="scss">
 
 .employeesSection {
+  position: relative;
+  background-image: url("@/assets/img/logcomex_back.png");
+  background-repeat: none;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 800px;
   height: 100vh;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(4, 0, 17, 0.514);
+    z-index: 0;
+  }
+
   &__content {
     width: 80%;
     display: flex;
     flex-direction: column;
     gap: 60px;
+    z-index: 1;
+    
   }
 
   &__table {
@@ -124,6 +143,10 @@ export default {
   background: $accent-color;
   border-radius: 15px 0px 0px 0px;
   padding: 8px 12px;
+  display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
 
   &__input {
     border: none;
@@ -160,6 +183,36 @@ export default {
   height: 16px;
   border-radius: 0px 0px 15px 0px;
   background-color: $accent-color;
+}
+
+@media(min-width: 1000px) {
+  .employessSection {
+    justify-content: center;
+
+    &__table {
+      align-self: center;
+      width: 80%;
+    }
+  }
+
+  .searchForm {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .table {
+    font-size: 16px;
+
+    td:nth-child(1) {
+      padding-left: 16px;
+      text-align: start;
+    }
+    td:nth-child(4) {
+      text-align: start;
+    }
+  }
 }
 
 </style>

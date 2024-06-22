@@ -71,6 +71,7 @@ header {
   background: $background-glass-color;
   backdrop-filter: blur(2px);
   transition: 0.5s;
+  z-index: 1;
 
   &__actived {
     background: $background-header-color;
