@@ -60,7 +60,6 @@ export default {
     try {
       const response = await axios.get(`https://logcomex-test-58861-default-rtdb.firebaseio.com/employees/${params.id}.json`)
       const fields = response.data
-      console.log(response.data.name)
       return {
         employee: {
           id: fields.id,
