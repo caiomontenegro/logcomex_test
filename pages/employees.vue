@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import {getEmployees} from '@/services/firebase'
+
 export default {
   data() {
     return {
@@ -37,44 +39,15 @@ export default {
         {key: 'Nome', label: 'Nome'},
         {key: 'Cargo', label: 'Cargo'},
         {key: 'actions', label: 'Detalhes'},
-      ],
-      employees: [
-        {
-          id: 0,
-          name: 'Caio',
-          photo: '',
-          office: 'Desenvolvedor',
-          description: 'Desenvolvedor front-end'
-        },
-        {
-          id: 1,
-          name: 'Fernando',
-          photo: '',
-          office: 'Desenvolvedor',
-          description: 'Desenvolvedor Back-end'
-        },
-        {
-          id: 2,
-          name: 'Gustavo',
-          photo: '',
-          office: 'Designer',
-          description: 'UX/UI web designer'
-        },
-        {
-          id: 3,
-          name: 'Liza',
-          photo: '',
-          office: 'Desenvolvedor',
-          description: 'Desenvolvedor front-end'
-        },
-        {
-          id: 4,
-          name: 'Naura',
-          photo: '',
-          office: 'Líder Tecnico',
-          description: 'Liderança do time'
-        }
       ]
+    }
+  },
+  async asyncData() {
+    try {
+      const employees = await getEmployees();
+      return { employees };
+    } catch (error) {
+      console.error('Error to get employees, consult the developer Caio Montenegro: caio.dev17@gmail.com', error);
     }
   },
   computed: {
@@ -82,8 +55,9 @@ export default {
       return this.employees.map(employee => ({
         ID: employee.id,
         Nome: employee.name,
-        Cargo: employee.office
-      }))
+        Cargo: employee.office,
+        Foto: employee.photo
+      }));
     },
     filteredItems() {
       return this.employeesTableData.filter(employee => {

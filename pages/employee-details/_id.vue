@@ -9,7 +9,7 @@
           <div class="employeeSection__details">
             <div class="employee"  v-if="employee">
               <div class="employee__leftSide">
-                <img src="" alt="">
+                <img :src="employee.photo" alt="employee-image" class="employee__image">
               </div>
               <div class="employee__rightSide">
                 <div class="employee__info">
@@ -49,49 +49,31 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+  data() {
+    return {
+      employee: null
+    };
+  },
   async asyncData({ params }) {
-    const employees = [
-      {
-        id: 0,
-        name: 'Caio',
-        photo: '',
-        office: 'Desenvolvedor',
-        description: 'Desenvolvedor front-end'
-      },
-      {
-        id: 1,
-        name: 'Fernando',
-        photo: '',
-        office: 'Desenvolvedor',
-        description: 'Desenvolvedor Back-end'
-      },
-      {
-        id: 2,
-        name: 'Gustavo',
-        photo: '',
-        office: 'Designer',
-        description: 'UX/UI web designer'
-      },
-      {
-        id: 3,
-        name: 'Liza',
-        photo: '',
-        office: 'Desenvolvedor',
-        description: 'Desenvolvedor front-end'
-      },
-      {
-        id: 4,
-        name: 'Naura',
-        photo: '',
-        office: 'Líder Tecnico',
-        description: 'Liderança do time'
-      }
-    ];
-
-    const employee = employees.find(emp => emp.id === parseInt(params.id));
-
-    return { employee };
+    try {
+      const response = await axios.get(`https://logcomex-test-58861-default-rtdb.firebaseio.com/employees/${params.id}.json`)
+      const fields = response.data
+      console.log(response.data.name)
+      return {
+        employee: {
+          id: fields.id,
+          name: fields.name,
+          photo: fields.photo,
+          office: fields.office,
+          description: fields.description
+        }
+      };
+    } catch (error) {
+      console.error('Error to get employees, consult the developer Caio Montenegro: caio.dev17@gmail.com', error)
+      return { employee: null }
+    }
   }
 }
 </script>
@@ -138,9 +120,14 @@ export default {
   min-width: 300px;
   gap: 30px;
 
+
   &__leftSide {
     display: flex;
     justify-content: space-evenly;
+  }
+
+  &__image{
+    border-radius: 50%;
   }
 
   &__rightSide {
