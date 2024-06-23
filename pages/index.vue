@@ -43,7 +43,7 @@
               <client-only>
                 <b-icon-laptop class="technologies__icon"></b-icon-laptop>
               </client-only>
-              <h2>Technologias, ferramentas e conceitos utilizados</h2>
+              <h2>Tecnologias, ferramentas e conceitos utilizados</h2>
             </div>
           </div>
           <div class="technologies__list">
@@ -81,39 +81,75 @@ export default {
       technologies: [
         {
           id: 0,
-          icon: "devicon-vuejs-plain",
-          title:"Vue.js",
-          description:"Js Framework"
+          icon: 'devicon-vuejs-plain',
+          title:'Vue.js',
+          description:'Js Framework'
         },
         {
           id: 1,
-          icon: "devicon-bootstrap-plain",
-          title:"Booststrap",
-          description:"CSS Framework"
+          icon: 'devicon-bootstrap-plain',
+          title:'Booststrap',
+          description:'CSS Framework'
         },
         {
           id: 2,
-          icon: "devicon-sass-original",
-          title:"Sass/Scss",
-          description:"Preprocessor"
+          icon: 'devicon-sass-original',
+          title:'Sass/Scss',
+          description:'Preprocessor'
         },
         {
           id: 3,
-          icon: "devicon-nuxtjs-plain",
-          title:"Nuxt.js",
-          description:"Vue Framework"
+          icon: 'devicon-nuxtjs-plain',
+          title:'Nuxt.js',
+          description:'Vue Framework'
         },
         {
           id: 4,
-          icon: "devicon-docker-plain",
-          title: "Docker",
-          description: "Virtual Containers"
+          icon: 'devicon-docker-plain',
+          title: 'Docker',
+          description: 'Virtual Containers'
         },
         {
           id: 5,
-          icon: "devicon-playwright-plain",
-          title: "Mobile First",
-          description: "Responsiveness"
+          icon: 'devicon-playwright-plain',
+          title: 'Mobile First',
+          description: 'Responsiveness'
+        },
+        {
+          id: 6,
+          icon: 'devicon-axios-plain',
+          title: 'Axios',
+          description: 'Request lib'
+        },
+        {
+          id: 7,
+          icon: 'devicon-firebase-plain',
+          title: 'Firebase',
+          description: 'Database'
+        },
+        {
+          id: 8,
+          icon: 'devicon-git-plain',
+          title: 'Git',
+          description: 'Code Versioning'
+        },
+        {
+          id: 8,
+          icon: 'devicon-julia-plain',
+          title: 'BEM',
+          description: 'Architecture'
+        },
+        {
+          id: 9,
+          icon: 'devicon-javascript-plain',
+          title: 'Javascript',
+          description: 'Architecture'
+        },
+        {
+          id: 10,
+          icon: 'devicon-insomnia-plain',
+          title: 'Insomnia',
+          description: 'API Tester'
         }
       ]
     }
@@ -212,7 +248,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 36px 0px;
+  padding: 56px 0px;
 
   &__icon {
     font-size: 80px;
@@ -222,6 +258,7 @@ export default {
   &__content {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     gap: 30px;
     width: 80%;
@@ -242,8 +279,9 @@ export default {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 50px;
   }
+
 }
 
 .icon {
@@ -309,7 +347,14 @@ export default {
 
       gap: 100px;
     }
+
+    &__list {
+      max-width: 60%;
+    }
   }
 
+  .technology {
+    width: 160px;
+  }
 }
 </style> 
