@@ -15,6 +15,13 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+
+# Docker (gerar imagem)
+$ docker-compose build
+
+# Docker (Iniciar Container)
+$ docker-compose up
+
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
