@@ -11,7 +11,7 @@
 ## Introdução
 
 <p>Este é um um teste de desenvolvimento front-end Vue.js</p>
-<img src="@/assets/img/mobile_index.png" alt="mobile">
+<img src="assets/img/mobile_index.png" alt="mobile">
 
 Trata-se de um micro serviço de consulta de funcionários, que contempla as seguintes funções:
 
