@@ -67,16 +67,20 @@ https://git-scm.com/
 
     cd customer.project
 
-</br>
-
-### Modo Desenvolvedor
-
-1 - Após baixar o projeto, rode o comando abaixo para instalar todos os pacotes
+5 - Após baixar o projeto, rode o comando abaixo para instalar todos os pacotes
 e dependências necessárias do projeto:
 
     yarn 
 
-2 - Em seguida, rode o comando abaixo, para buildar o projeto:
+6 - Crie os arquivos de build rodando o comando abaixo:
+
+    yarn build
+
+</br>
+
+### Modo Desenvolvedor
+
+1 - Em seguida, rode o comando abaixo, para buildar o projeto:
 
     yarn dev
 
